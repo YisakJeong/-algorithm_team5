@@ -1,11 +1,14 @@
 # 파일을 읽고 df로 저장
 import pandas as pd
-numbers = pd.read_csv("numbers.csv") # 파일명 변환 필요
+import random
+numbers = [random.randint(0, 10**6) for _ in range(10**3)]
+
+#numbers = pd.read_csv("numbers.csv") # 파일명 변환 필요
 #numbers = df['values'].tolist() # 리스트화가 되어있지 않을 경우
+print(f"정렬되지 않은 숫자 리스트: \n {numbers}")
 
 # sort() 사용 - 내장 정렬 함수
-basic_sorted = numbers.sort()
-print("sort():", numbers)
+basic_sorted = sorted(numbers)
 
 # 병합 정렬 (Merge Sort)
 def merge_sort(arr):
@@ -67,3 +70,5 @@ def quick_sort(arr):
     return quick_sort(left) + middle + quick_sort(right)
 
 quick_sorted = quick_sort(numbers)
+
+print(f"기본 내장 함수로 정렬: \n {basic_sorted} \n 병합정렬: \n {merge_sorted} \n 퀵정렬: \n {quick_sorted}")
