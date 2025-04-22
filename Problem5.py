@@ -4,7 +4,7 @@ numbers = pd.read_csv("numbers.csv") # 파일명 변환 필요
 #numbers = df['values'].tolist() # 리스트화가 되어있지 않을 경우
 
 # sort() 사용 - 내장 정렬 함수
-numbers.sort()
+basic_sorted = numbers.sort()
 print("sort():", numbers)
 
 # 병합 정렬 (Merge Sort)
@@ -13,7 +13,7 @@ def merge_sort(arr):
     if len(arr) <= 1:
         return arr
 
-    # 중간 인델스를 배열을 반으로 나눔
+    # 중간 인덱스를 배열을 반으로 나눔
     mid = len(arr) // 2
 
     # 왼쪽 절반을 재귀적으로 정렬
@@ -47,6 +47,8 @@ def merge(left, right):
 
     return result #최종 정렬된 리스트 반환
 
+merge_sorted = merge_sort(numbers)
+
 # 퀵 정렬
 def quick_sort(arr):
     # 종료 조건: 리스트의 길이가 1 이하이면 이미 정렬된 상태이므로 그대로 반환
@@ -63,3 +65,5 @@ def quick_sort(arr):
 
     # 재귀 호출을 통해 left와 right를 정렬하고, middle과 함께 합쳐서 반환
     return quick_sort(left) + middle + quick_sort(right)
+
+quick_sorted = quick_sort(numbers)
