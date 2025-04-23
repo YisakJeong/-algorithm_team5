@@ -3,7 +3,7 @@ import pandas as pd
 import random
 import time
 import matplotlib.pyplot as plt  # 터미널에서 pip install matplotlib으로 설치 필요
-import numpy as np
+# import numpy as np
 
 #numbers = pd.read_csv("numbers.csv") # 파일명 변환 필요
 #numbers = df['values'].tolist() # 리스트화가 되어있지 않을 경우
@@ -108,14 +108,10 @@ quick_sort(numbers)
 end_time = time.time()
 times_quick.append(end_time - start_time)
 
-print(times_basic)
-
 # 그래프 그리기
-
 # 막대 너비 설정
 width = 0.25
 
-# 그래프 그리기
 plt.bar(1 - width, times_basic, width, label='Basic')
 plt.bar(1, times_merge, width, label='Merge Sort')
 plt.bar(1 + width, times_quick, width, label='Quick Sort')
@@ -126,5 +122,4 @@ plt.xticks([1 - width, 1, 1 + width], ['Basic', 'Merge Sort', 'Quick Sort'])
 plt.title("Sorting Algorithm Performance Comparison")
 plt.legend()
 plt.grid(True, axis='y', linestyle='--', alpha=0.6)
-plt.tight_layout()
 plt.show()
