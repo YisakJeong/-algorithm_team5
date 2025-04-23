@@ -20,3 +20,14 @@ target=int(input("찾고 싶은 숫자를 입력하세요:"))
 
 result=binary_search(num_lst, target)
 print(result)
+
+
+
+
+
+
+
+
+
+############################################################
+# 프롬프트 질의 내역
